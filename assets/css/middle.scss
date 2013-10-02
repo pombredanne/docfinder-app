@@ -1,0 +1,137 @@
+//  =====================
+//  = Author: Adonis K. =
+//  =====================
+
+// STYLES
+
+html{
+	height: 100%;
+	width: 100%;
+}
+
+body{
+	box-sizing: border-box;
+	height: 100%;
+	width: 100%;
+	display: table;
+	word-break: break-all;
+	word-wrap: break-word;
+	background-color: #fff;
+	background: radial-gradient(circle, #fff 0%, #ddd 100%) no-repeat top left fixed;
+}
+
+#container{
+	box-sizing: border-box;
+	transition: 150ms ease;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	width: 100%;
+	@media only screen and (max-width: 1139px){
+		padding: 1rem;
+	}
+}
+
+h1{
+	@media only screen and (max-width: 1139px){
+		word-break: initial;
+		word-wrap: initial;
+	}
+
+	a,
+	a:visited{
+		color: #222;
+	}
+
+	a:hover{
+		color: #005580;
+	}
+}
+
+#results{
+	box-sizing: border-box;
+	display: none;
+	max-width: 1140px;
+	width: 90%;
+	margin: 2em auto 0 auto;
+	padding: 1em;
+
+	@media only screen and (max-width: 1139px){
+		max-width: none;
+	}
+
+	#info{
+		display: block;
+		margin-bottom: 1em;
+		padding: 0;
+		text-align: center;
+
+		h3{
+			font-size: 1em;
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	.result{
+		text-align: left;
+		margin: 0.5em;
+		padding: 0.5em;
+		background-color: rgba(255, 255, 255, 0.2);
+		border: 1px solid #ccc;
+		box-shadow: 1px 1px 1px #ccc;
+		border-radius: 3px;
+
+		hr{
+			margin: 0.25em;
+		}
+	}
+
+	h3{
+		margin: 0;
+		line-height: 1em;
+
+		span{
+			position: relative;
+			top: -2px;
+			margin-left: 5px;
+		}
+	}
+
+	p{
+		font-size: 0.8em;
+		margin: 0;
+		padding: 0;
+		word-wrap: break-word;
+		hyphens: auto;
+	}
+
+	p.description{
+		font-weight: bold;
+	}
+}
+
+form{
+	display: inline-block;
+	padding: 1em;
+	background-color: #eee;
+	border: 1px solid #ccc;
+	box-shadow: 1px 1px 1px #ccc;
+	border-radius: 3px;
+
+
+	@media only screen and (max-width: 1139px){
+		display: block;
+
+		fieldset > *{
+			box-sizing: border-box !important;
+			width: 100% !important;
+			display: block !important;
+			margin-bottom: 1em !important;
+		}
+
+		fieldset > input{
+			padding: 1em !important;
+		}
+	}
+}
