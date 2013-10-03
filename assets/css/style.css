@@ -556,24 +556,24 @@ body {
 
 header {
   padding: 1rem;
-  background-color: #dddddd;
-  border-bottom: 1px solid #d0d0d0;
+  background-color: #48c2be;
+  border-bottom: 1px solid #3cb4b0;
 }
 header h1 {
   margin: 0;
   text-align: center;
 }
 header h1 a {
-  color: #222222;
+  color: white;
   text-decoration: none;
 }
 
 form {
   margin: 0;
   padding: 1rem;
-  color: #222222;
-  background-color: #dddddd;
-  border-bottom: 1px solid #c4c4c4;
+  color: #48c2be;
+  background-color: white;
+  border-bottom: 1px solid #a8e2e0;
 }
 form fieldset {
   padding: 0;
@@ -587,6 +587,15 @@ form fieldset button {
   width: 100%;
   margin: 0;
   padding: 0.5rem;
+  color: white;
+  background-color: #48c2be;
+  border: none;
+}
+form fieldset ::-webkit-input-placeholder {
+  color: #ececec;
+}
+form fieldset ::-ms-input-placeholder {
+  color: #ececec;
 }
 
 #results {
@@ -605,12 +614,14 @@ form fieldset button {
   border: 1px solid #e6e6e6;
 }
 #results .result .label {
-  vertical-align: middle;
-  font-size: 0.6rem;
   margin-left: 0.5rem;
   padding: 0.25rem;
-  color: #222222;
-  background-color: #dddddd;
+  word-break: initial;
+  word-wrap: initial;
+  vertical-align: middle;
+  font-size: 0.6rem;
+  color: white;
+  background-color: #48c2be;
   border-radius: 1rem;
 }
 #results .result h3 {
@@ -636,15 +647,15 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #dddddd;
-  border-top: 1px solid #c4c4c4;
+  background-color: #48c2be;
+  border-top: 1px solid #36a19e;
 }
 footer p {
   margin: 0;
   padding: 1rem 0;
   text-align: center;
-  color: #222222;
+  color: white;
 }
 footer p a {
-  color: #222222;
+  color: white;
 }
