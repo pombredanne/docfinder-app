@@ -2,7 +2,7 @@
 
 <widget xmlns = "http://www.w3.org/ns/widgets" xmlns:gap = "http://phonegap.com/ns/1.0" id = "com.phonegap.hello-world" version = "1.0.0">
 
-	<name>docFinder</name>
+	<name>docFinder (Alpha)</name>
 
 	<description>A documentation searching service by AKLP.gr Projects and Adonis K.</description>
 
