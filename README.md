@@ -1,4 +1,4 @@
-docfinder-app
+docFinder
 =============
 
 Docfinder for Android and Windows Phone smartphones
@@ -6,6 +6,8 @@ Docfinder for Android and Windows Phone smartphones
 ---
 
 ## Android
+
+Supports: Gingerbread 2.3+ (API level 9), preferably ICS+ (API level 14+)
 
 You can get the android version from [here](https://play.google.com/store/apps/details?id=com.varemenos.docfinder)
 

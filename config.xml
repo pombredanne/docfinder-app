@@ -14,17 +14,16 @@
 	<author href="http://varemenos.com" email="aklp08@gmail.com">Adonis K.</author>
 	<preference name="permissions" value="none"/>
 
-
-
 	<gap:platform name="android" />
 	<gap:platform name="winphone" />
 
-	<preference name="phonegap-version"           value="2.9.0" />
-	<preference name="orientation"                value="default" />
-	<preference name="target-device"              value="universal" />
-	<preference name="fullscreen"                 value="true" />
-	<preference name="android-minSdkVersion"      value="7" />
-	<preference name="android-installLocation"    value="auto" />
+	<preference name="phonegap-version" value="2.9.0" />
+	<preference name="orientation" value="default" />
+	<preference name="target-device"  value="universal" />
+	<preference name="fullscreen" value="true" />
+	<preference name="android-minSdkVersion" value="9" />
+	<preference name="android-targetSdkVersion" value="14" />
+	<preference name="android-installLocation" value="auto" />
 
 	<icon src="icon.png" />
 
@@ -38,13 +37,13 @@
 
 
 	<!-- disable splash for now
+	<gap:splash src="splash.png" />
+
 	<gap:splash src="assets/img/splash/drawable-ldpi/splash.png"  gap:platform="android" gap:density="ldpi" />
 	<gap:splash src="assets/img/splash/drawable-mdpi/splash.png"  gap:platform="android" gap:density="mdpi" />
 	<gap:splash src="assets/img/splash/drawable-hdpi/splash.png"  gap:platform="android" gap:density="hdpi" />
 	<gap:splash src="assets/img/splash/drawable-xhdpi/splash.png" gap:platform="android" gap:density="xhdpi" />
-	-->
 
-	<!-- dont have one yet
 	<gap:splash src="res/screen/windows-phone/screen-portrait.jpg" gap:platform="winphone" />
 	-->
 
