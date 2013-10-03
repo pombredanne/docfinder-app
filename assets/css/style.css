@@ -557,11 +557,11 @@ body {
 header {
   padding: 1rem;
   background-color: #48c2be;
-  border-bottom: 1px solid #3cb4b0;
 }
 header h1 {
   margin: 0;
   text-align: center;
+  color: white;
 }
 header h1 a,
 header h1 a:visited {
@@ -591,6 +591,9 @@ form fieldset button {
   color: white;
   background-color: #48c2be;
   border: none;
+}
+form fieldset button {
+  color: white;
 }
 form fieldset ::-webkit-input-placeholder {
   color: #ececec;

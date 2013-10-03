@@ -23,11 +23,11 @@ body{
 header{
 	padding: 1rem;
 	background-color: $main-color;
-	border-bottom: 1px solid darken($main-color, 5%);
 
 	h1{
 		margin: 0;
 		text-align: center;
+		color: $main-color-inv;
 
 		a,
 		a:visited{
@@ -59,6 +59,10 @@ form{
 			color: $main-color-inv;
 			background-color: $main-color;
 			border: none;
+		}
+
+		button{
+			color: $main-color-inv;
 		}
 
 		::-webkit-input-placeholder{
