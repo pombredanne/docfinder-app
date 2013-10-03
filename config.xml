@@ -4,7 +4,7 @@
 	xmlns = "http://www.w3.org/ns/widgets"
 	xmlns:gap = "http://phonegap.com/ns/1.0"
 	id = "com.varemenos.docfinder"
-	version = "0.0.2"
+	version = "0.0.3"
 >
 
 	<name>docFinder (Alpha)</name>
@@ -28,14 +28,13 @@
 
 	<icon src="icon.png" />
 
-	<!-- disabled missing icons
- 	<icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
-	<icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:density="mdpi" />
-	<icon src="res/icon/android/icon-72-hdpi.png"   gap:platform="android"    gap:density="hdpi" />
-	<icon src="res/icon/android/icon-96-xhdpi.png"  gap:platform="android"    gap:density="xhdpi" />
+ 	<icon src="assets/img/images/drawable-ldpi/icon.png"   gap:platform="android"    gap:density="ldpi" />
+	<icon src="assets/img/images/drawable-mdpi/icon.png"   gap:platform="android"    gap:density="mdpi" />
+	<icon src="assets/img/images/drawable-hdpi/icon.png"   gap:platform="android"    gap:density="hdpi" />
+	<icon src="assets/img/images/drawable-xhdpi/icon.png"  gap:platform="android"    gap:density="xhdpi" />
 	<icon src="res/icon/windows-phone/icon-48.png"  gap:platform="winphone" />
 	<icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" />
-	 -->
+
 
 	<!-- disable splash for now
 	<gap:splash src="assets/img/splash/drawable-ldpi/splash.png"  gap:platform="android" gap:density="ldpi" />
