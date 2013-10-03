@@ -1,0 +1,130 @@
+@import 'lib/generic/_base';
+@import 'lib/modules/_grid';
+
+@include grid(12, 1rem);
+
+$main-color: #ddd;
+$second-color: #fff;
+$bgc: #eef3f3;
+$font-color: #aaa;
+
+body{
+	color: $font-color;
+	font-weight: bold;
+	background-color: $bgc;
+	hyphens: auto;
+}
+
+
+#container{
+	padding-bottom: 3.5rem;
+}
+
+header{
+	padding: 1rem;
+	background-color: $main-color;
+	border-bottom: 1px solid darken($main-color, 5%);
+
+	h1{
+		margin: 0;
+		text-align: center;
+
+		a{
+			color: invert($main-color);
+			text-decoration: none;
+		}
+	}
+}
+
+form{
+	margin: 0;
+	padding: 1rem;
+	color: invert($main-color);
+	background-color: $main-color;
+	border-bottom: 1px solid darken($main-color, 10%);
+
+	fieldset{
+		padding: 0;
+		border: none;
+
+		input,
+		select,
+		button{
+			box-sizing: border-box !important;
+			display: block;
+			width: 100%;
+			margin: 0;
+			padding: 0.5rem;
+		}
+	}
+}
+
+#results{
+	padding: 0 1rem;
+
+	h3{
+		margin: 1rem 0 0 0;
+	}
+
+	.result{
+		box-sizing: border-box;
+		word-wrap: break-word;
+		word-break: break-all;
+		margin: 1rem 0;
+		padding: 1rem;
+		background-color: $second-color;
+		border: 1px solid darken($second-color, 10%);
+
+		.label{
+			vertical-align: middle;
+			font-size: 0.6rem;
+			margin-left: 0.5rem;
+			padding: 0.25rem;
+			color: invert($main-color);
+			background-color: $main-color;
+			border-radius: 1rem;
+		}
+
+		h3{
+			margin: 0;
+		}
+
+		.resultLink{
+			display: inline-block;
+			vertical-align: middle;
+			text-decoration: none;
+		}
+
+		p{
+			margin-bottom: 0;
+			font-weight: normal;
+
+			&:empty{
+				margin-top: 0;
+			}
+		}
+
+		a{
+			color: darken($font-color, 15%);
+		}
+	}
+}
+
+footer{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: $main-color;
+	border-top: 1px solid darken($main-color, 10%);
+
+	p{
+		margin: 0;
+		padding: 1rem 0;
+		text-align: center;
+		color: invert($main-color);
+
+		a{
+			color: invert($main-color);
+		}
+	}
+}

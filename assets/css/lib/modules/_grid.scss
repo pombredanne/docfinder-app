@@ -2,7 +2,6 @@
 veGrid - Grid System by Adonis K.
 ******************************************* */
 
-@import "../generic/borderbox";
 @import "../generic/clearfix";
 // A mixin that generates CSS for a grid system
 // @mixin grid
@@ -33,7 +32,7 @@ veGrid - Grid System by Adonis K.
 	}
 
 	.grid{
-		@include borderbox;
+		box-sizing: border-box;
 		@include clearfix;
 		display: block;
 		margin: 0;
@@ -42,7 +41,7 @@ veGrid - Grid System by Adonis K.
 	}
 
 	.row{
-		@include borderbox;
+		box-sizing: border-box;
 		@include clearfix;
 		display: block;
 
@@ -55,7 +54,7 @@ veGrid - Grid System by Adonis K.
 		}
 
 		& > *{
-			@include borderbox;
+			box-sizing: border-box;
 			display: block;
 			float: left;
 
@@ -64,20 +63,6 @@ veGrid - Grid System by Adonis K.
 
 				&:last-child{
 					padding-right: 0;
-				}
-			}
-
-			@media only screen and (max-width: 1023px){
-				width: 100%;
-				float: none;
-				padding: 0;
-
-				@if($gutter != 0){
-					padding-bottom: $gutter;
-
-					&:last-child{
-						padding-bottom: 0;
-					}
 				}
 			}
 		}
