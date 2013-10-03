@@ -563,7 +563,8 @@ header h1 {
   margin: 0;
   text-align: center;
 }
-header h1 a {
+header h1 a,
+header h1 a:visited {
   color: white;
   text-decoration: none;
 }
@@ -639,7 +640,8 @@ form fieldset ::-ms-input-placeholder {
 #results .result p:empty {
   margin-top: 0;
 }
-#results .result a {
+#results .result a,
+#results .result a:visited {
   color: #848484;
 }
 
@@ -656,6 +658,7 @@ footer p {
   text-align: center;
   color: white;
 }
-footer p a {
+footer p a,
+footer p a:visited {
   color: white;
 }

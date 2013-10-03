@@ -29,7 +29,8 @@ header{
 		margin: 0;
 		text-align: center;
 
-		a{
+		a,
+		a:visited{
 			color: $main-color-inv;
 			text-decoration: none;
 		}
@@ -117,7 +118,8 @@ form{
 			}
 		}
 
-		a{
+		a,
+		a:visited{
 			color: darken($font-color, 15%);
 		}
 	}
@@ -136,7 +138,8 @@ footer{
 		text-align: center;
 		color: $main-color-inv;
 
-		a{
+		a,
+		a:visited{
 			color: $main-color-inv;
 		}
 	}
