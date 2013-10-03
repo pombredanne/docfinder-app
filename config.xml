@@ -27,13 +27,12 @@
 	<preference name="android-installLocation"    value="auto" />
 
 	<icon src="icon.png" />
-	<icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
+<!-- 	<icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
 	<icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:density="mdpi" />
 	<icon src="res/icon/android/icon-72-hdpi.png"   gap:platform="android"    gap:density="hdpi" />
 	<icon src="res/icon/android/icon-96-xhdpi.png"  gap:platform="android"    gap:density="xhdpi" />
-	<icon src="res/icon/webos/icon-64.png"          gap:platform="webos" />
 	<icon src="res/icon/windows-phone/icon-48.png"  gap:platform="winphone" />
-	<icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" />
+	<icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" /> -->
 
 	<gap:splash src="assets/img/splash/drawable-ldpi/splash.png"  gap:platform="android" gap:density="ldpi" />
 	<gap:splash src="assets/img/splash/drawable-mdpi/splash.png"  gap:platform="android" gap:density="mdpi" />
