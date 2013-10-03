@@ -25,7 +25,7 @@
 	<preference name="android-targetSdkVersion" value="14" />
 	<preference name="android-installLocation" value="auto" />
 
-	<icon src="icon.png" />
+	<!-- <icon src="icon.png" /> -->
 
  	<icon src="assets/img/images/drawable-ldpi/icon.png"   gap:platform="android"    gap:density="ldpi" />
 	<icon src="assets/img/images/drawable-mdpi/icon.png"   gap:platform="android"    gap:density="mdpi" />
