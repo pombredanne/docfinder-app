@@ -27,18 +27,24 @@
 	<preference name="android-installLocation"    value="auto" />
 
 	<icon src="icon.png" />
-<!-- 	<icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
+
+	<!-- disabled missing icons
+ 	<icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
 	<icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:density="mdpi" />
 	<icon src="res/icon/android/icon-72-hdpi.png"   gap:platform="android"    gap:density="hdpi" />
 	<icon src="res/icon/android/icon-96-xhdpi.png"  gap:platform="android"    gap:density="xhdpi" />
 	<icon src="res/icon/windows-phone/icon-48.png"  gap:platform="winphone" />
-	<icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" /> -->
+	<icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" />
+	 -->
 
 	<gap:splash src="assets/img/splash/drawable-ldpi/splash.png"  gap:platform="android" gap:density="ldpi" />
 	<gap:splash src="assets/img/splash/drawable-mdpi/splash.png"  gap:platform="android" gap:density="mdpi" />
 	<gap:splash src="assets/img/splash/drawable-hdpi/splash.png"  gap:platform="android" gap:density="hdpi" />
 	<gap:splash src="assets/img/splash/drawable-xhdpi/splash.png" gap:platform="android" gap:density="xhdpi" />
+
+	<!-- dont have one yet
 	<gap:splash src="res/screen/windows-phone/screen-portrait.jpg" gap:platform="winphone" />
+	-->
 
 	<access origin="*" />
 </widget>
