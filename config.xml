@@ -27,11 +27,10 @@
 
 	<!-- <icon src="icon.png" /> -->
 
- 	<icon src="assets/img/images/drawable-ldpi/icon.png"   gap:platform="android"    gap:density="ldpi" />
-	<icon src="assets/img/images/drawable-mdpi/icon.png"   gap:platform="android"    gap:density="mdpi" />
-	<icon src="assets/img/images/drawable-hdpi/icon.png"   gap:platform="android"    gap:density="hdpi" />
-	<icon src="assets/img/images/drawable-xhdpi/icon.png"  gap:platform="android"    gap:density="xhdpi" />
-	<icon src="assets/img/images/drawable-xxhdpi/icon.png"  gap:platform="android"    gap:density="xxhdpi" />
+	<icon src="assets/img/images/drawable-mdpi/ic_launcher.png"   gap:platform="android"    gap:density="mdpi" />
+	<icon src="assets/img/images/drawable-hdpi/ic_launcher.png"   gap:platform="android"    gap:density="hdpi" />
+	<icon src="assets/img/images/drawable-xhdpi/ic_launcher.png"  gap:platform="android"    gap:density="xhdpi" />
+	<icon src="assets/img/images/drawable-xxhdpi/ic_launcher.png"  gap:platform="android"    gap:density="xxhdpi" />
 	<icon src="assets/img/images/wp-48/icon.png"  gap:platform="winphone" />
 	<icon src="assets/img/images/wp-173/icon.png" gap:platform="winphone"   gap:role="background" />
 
