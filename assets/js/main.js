@@ -64,11 +64,7 @@ $(function () {
 				$('#page option[name=' + params.page + ']').attr("selected", true);
 
 				// and display results
-				$('#results').fadeIn('250', function () {
-					// then scroll to the #results
-					var offset = $('#results').offset().top;
-					$('html, body').animate({scrollTop: offset}, 250);
-				});
+				$('#results').fadeIn('250');
 			}
 		});
 	}
@@ -107,7 +103,12 @@ $(function () {
 	// on form submit event
 	$('form').on("submit", function (e) {
 		e.preventDefault();
+
 		getResults();
+
+		// scroll to the #results
+		var offset = $('#results').offset().top;
+		$('html, body').animate({scrollTop: offset}, 250);
 	});
 
 	// on dropdown change event
