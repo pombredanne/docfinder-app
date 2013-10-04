@@ -557,6 +557,7 @@ body {
 header {
   padding: 1rem;
   background-color: #48c2be;
+  border-bottom: 1px solid #39aba7;
 }
 header h1 {
   margin: 0;
@@ -565,8 +566,22 @@ header h1 {
 }
 header h1 a,
 header h1 a:visited {
+  display: inline-block;
   color: white;
   text-decoration: none;
+  background-color: white;
+  padding: 0.25rem;
+}
+header h1 a span,
+header h1 a:visited span {
+  color: #48c2be;
+  padding: 0.25rem;
+}
+header h1 a img,
+header h1 a span,
+header h1 a:visited img,
+header h1 a:visited span {
+  vertical-align: middle;
 }
 
 form {
@@ -574,7 +589,7 @@ form {
   padding: 1rem;
   color: #48c2be;
   background-color: white;
-  border-bottom: 1px solid #a8e2e0;
+  border-bottom: 1px solid #e6e6e6;
 }
 form fieldset {
   padding: 0;
@@ -591,6 +606,15 @@ form fieldset button {
   color: white;
   background-color: #48c2be;
   border: none;
+}
+form fieldset input:focus,
+form fieldset select:focus,
+form fieldset button:focus {
+  background-color: #81d5d2;
+  outline: 1px solid transparent;
+}
+form fieldset #query {
+  margin-bottom: 1rem;
 }
 form fieldset button {
   color: white;
@@ -643,9 +667,18 @@ form fieldset ::-ms-input-placeholder {
 #results .result p:empty {
   margin-top: 0;
 }
+#results .result .description {
+  margin-top: 0;
+}
 #results .result a,
 #results .result a:visited {
   color: #848484;
+}
+#results .result hr {
+  border-top: 1px solid #e6e6e6;
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
 }
 
 footer {
@@ -653,7 +686,7 @@ footer {
   bottom: 0;
   width: 100%;
   background-color: #48c2be;
-  border-top: 1px solid #36a19e;
+  border-top: 1px solid #39aba7;
 }
 footer p {
   margin: 0;
