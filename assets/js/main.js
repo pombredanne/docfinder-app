@@ -52,10 +52,6 @@ $(function () {
 				for (var i = 0; i < data.results.length; i++) {
 					$("#results").append('<div class="result"><h3><a class="resultLink" href="' + data.results[i].url + '">' + data.results[i].name + '</a><span class="label">' + data.results[i].type + '</span></h3><hr /><p class="description">' + data.results[i].description + '</p><p class="synopsis">' + data.results[i].synopsis + '</p><div class="namespace">' + data.results[i].namespace + '</div></div>');
 				}
-				// }
-
-				// and display results
-				$('#results').fadeIn('250');
 
 				// empty the #page dropdown options
 				$('#page').html('').removeAttr('disabled');
@@ -67,8 +63,12 @@ $(function () {
 				// finally enable the #page dropdown
 				$('#page option[name=' + params.page + ']').attr("selected", true);
 
-				var offset = $('#results').offset().top;
-				$('html, body').animate({scrollTop: offset}, 250);
+				// and display results
+				$('#results').fadeIn('250', function () {
+					// then scroll to the #results
+					var offset = $('#results').offset().top;
+					$('html, body').animate({scrollTop: offset}, 500);
+				});
 			}
 		});
 	}
