@@ -589,7 +589,7 @@ form fieldset button {
   display: block;
   width: 100%;
   margin: 0;
-  padding: 0.5rem;
+  padding: 0.5rem !important;
   color: white;
   background-color: #48c2be;
   border: none;
