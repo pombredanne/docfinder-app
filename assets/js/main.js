@@ -66,6 +66,9 @@ $(function () {
 
 				// finally enable the #page dropdown
 				$('#page option[name=' + params.page + ']').attr("selected", true);
+
+				var offset = $('#results').offset().top;
+				$('html, body').animate({scrollTop: offset}, 250);
 			}
 		});
 	}

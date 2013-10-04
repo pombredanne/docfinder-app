@@ -600,8 +600,7 @@ form fieldset button {
 form fieldset input:focus,
 form fieldset select:focus,
 form fieldset button:focus {
-  background-color: #81d5d2;
-  outline: 1px solid transparent;
+  outline: 5px solid #81d5d2;
 }
 form fieldset #query {
   margin-bottom: 1rem;
@@ -617,7 +616,10 @@ form fieldset ::-ms-input-placeholder {
 }
 
 #results {
-  padding: 0 1rem;
+  padding: 1rem 1rem 0 1rem;
+}
+#results #info h3 {
+  margin: 0;
 }
 #results h3 {
   margin: 1rem 0 0 0;

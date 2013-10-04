@@ -66,8 +66,7 @@ form{
 			border-radius: 0;
 
 			&:focus{
-				background-color: lighten($main-color, 15%);
-				outline: 1px solid transparent;
+				outline: 5px solid lighten($main-color, 15%);
 			}
 		}
 
@@ -90,7 +89,13 @@ form{
 }
 
 #results{
-	padding: 0 1rem;
+	padding: 1rem 1rem 0 1rem;
+
+	#info{
+		h3{
+			margin: 0;
+		}
+	}
 
 	h3{
 		margin: 1rem 0 0 0;
