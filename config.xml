@@ -15,7 +15,6 @@
 	<preference name="permissions" value="none"/>
 
 	<gap:platform name="android" />
-	<gap:platform name="winphone" />
 
 	<preference name="phonegap-version" value="3.0.0" />
 	<preference name="orientation" value="default" />
@@ -31,8 +30,6 @@
 	<icon src="assets/img/images/drawable-hdpi/icon.png"   gap:platform="android"    gap:density="hdpi" />
 	<icon src="assets/img/images/drawable-xhdpi/icon.png"  gap:platform="android"    gap:density="xhdpi" />
 	<icon src="assets/img/images/drawable-xxhdpi/icon.png"  gap:platform="android"    gap:density="xxhdpi" />
-	<icon src="assets/img/images/wp-48/icon.png"  gap:platform="winphone" />
-	<icon src="assets/img/images/wp-173/icon.png" gap:platform="winphone"   gap:role="background" />
 
 
 	<!-- disable splash for now
@@ -42,8 +39,6 @@
 	<gap:splash src="assets/img/splash/drawable-mdpi/splash.png"  gap:platform="android" gap:density="mdpi" />
 	<gap:splash src="assets/img/splash/drawable-hdpi/splash.png"  gap:platform="android" gap:density="hdpi" />
 	<gap:splash src="assets/img/splash/drawable-xhdpi/splash.png" gap:platform="android" gap:density="xhdpi" />
-
-	<gap:splash src="res/screen/windows-phone/screen-portrait.jpg" gap:platform="winphone" />
 	-->
 
 	<access origin="*" />
