@@ -67,7 +67,7 @@ $(function () {
 				$('#results').fadeIn('250', function () {
 					// then scroll to the #results
 					var offset = $('#results').offset().top;
-					$('html, body').animate({scrollTop: offset}, 500);
+					$('html, body').animate({scrollTop: offset}, 250);
 				});
 			}
 		});
