@@ -3,6 +3,9 @@
 //  =====================
 
 $(function () {
+	// helper variable
+	var formsubmitted = false;
+
 	function getResults() {
 		// get the keyword
 		query = $('#query').val();
@@ -14,9 +17,6 @@ $(function () {
 			// then just empty the string
 			lang = '';
 		}
-
-		// helper variable
-		var formsubmitted = false;
 
 		// ajax call
 		$.ajax({
@@ -68,9 +68,9 @@ $(function () {
 
 				// and display results
 				$('#results').fadeIn('250', function () {
-					if(formsubmitted){
+					if(formsubmitted === true){
 						// then scroll to the #results
-						var offset = $('#results').offset().top;
+						var offset = $(this).offset().top;
 						$('html, body').animate({scrollTop: offset}, 250);
 
 						formsubmitted = false;
