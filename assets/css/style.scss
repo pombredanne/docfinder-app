@@ -22,6 +22,7 @@ body{
 
 header{
 	padding: 1rem;
+	color: $main-color-inv;
 	background-color: $main-color;
 	border-bottom: 1px solid darken($main-color, 7.5%);
 
@@ -32,21 +33,8 @@ header{
 
 		a,
 		a:visited{
-			display: inline-block;
-			color: $main-color-inv;
 			text-decoration: none;
-			background-color: $main-color-inv;
-			padding: 0.25rem;
-
-			span{
-				color: $main-color;
-				padding: 0.25rem;
-			}
-
-			img,
-			span{
-				vertical-align: middle;
-			}
+			color: $main-color-inv;
 		}
 	}
 }
