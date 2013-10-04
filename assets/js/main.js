@@ -36,10 +36,12 @@ $(function () {
 				// hide the results div
 				$('#results').hide();
 
-				// print data returned {
+				// if data were returned
 				if(data.total !== null){
+					// print data returned
 					$("#info h3").html('Found "' + data.total + '" results.');
 				}else{
+					// else ask for data
 					$("#info h3").html('Please enter a keyword first');
 				}
 
@@ -53,15 +55,16 @@ $(function () {
 				// }
 
 				// and display results
-				$('#results').fadeIn('1500');
+				$('#results').fadeIn('250');
 
-				// empty the page dropdown options
+				// empty the #page dropdown options
 				$('#page').html('').removeAttr('disabled');
-				// fill the page dropdown with page options
+				// fill the #page dropdown with page options
 				for (i = 0; i < pages; i++) {
 					$('#page').append('<option name=' + (i + 1) + ' value=' + (i + 1) + '>' + (i + 1) + '</option>');
 				}
 
+				// finally enable the #page dropdown
 				$('#page option[name=' + params.page + ']').attr("selected", true);
 			}
 		});
@@ -69,7 +72,6 @@ $(function () {
 
 	// get the specified url parameter's value
 	// credits: https://gist.github.com/1771618
-
 	function getUrlVar(key) {
 		var result = new RegExp(key + "=([^&]*)", "i").exec(window.location.search);
 		return result && result[1] || "";
@@ -96,6 +98,8 @@ $(function () {
 		$('#query').val(params.q);
 		getResults();
 	}
+
+	// Events
 
 	// on form submit event
 	$('form').on("submit", function (e) {
