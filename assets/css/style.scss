@@ -53,11 +53,12 @@ form{
 		input,
 		select,
 		button{
+			-webkit-appearance: none;
 			box-sizing: border-box !important;
 			display: block;
 			width: 100%;
 			margin: 0;
-			padding: 0.5rem !important;
+			padding: 0.5rem;
 			color: $main-color-inv;
 			background-color: $main-color;
 			border: none;

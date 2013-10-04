@@ -585,11 +585,12 @@ form fieldset {
 form fieldset input,
 form fieldset select,
 form fieldset button {
+  -webkit-appearance: none;
   box-sizing: border-box !important;
   display: block;
   width: 100%;
   margin: 0;
-  padding: 0.5rem !important;
+  padding: 0.5rem;
   color: white;
   background-color: #48c2be;
   border: none;

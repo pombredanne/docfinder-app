@@ -1,7 +1,7 @@
 docFinder
 =============
 
-Docfinder for Android and Windows Phone smartphones
+Docfinder for Android and soon for Windows Phone smartphones
 
 ---
 
@@ -13,7 +13,7 @@ You can get the android version from [here](https://play.google.com/store/apps/d
 
 ## Windows Phone
 
-coming soon!
+coming soon (maybe)!
 
 ---
 
