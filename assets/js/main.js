@@ -108,7 +108,7 @@ $(function () {
 
 		// scroll to the #results
 		var offset = $('#results').offset().top;
-		$('html, body').animate({scrollTop: offset}, 250);
+		$('html, body').animate({scrollTop: offset}, 500);
 	});
 
 	// on dropdown change event
