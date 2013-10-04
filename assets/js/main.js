@@ -15,6 +15,9 @@ $(function () {
 			lang = '';
 		}
 
+		// helper variable
+		var formsubmitted = false;
+
 		// ajax call
 		$.ajax({
 			dataType: 'jsonp',
@@ -64,7 +67,15 @@ $(function () {
 				$('#page option[name=' + params.page + ']').attr("selected", true);
 
 				// and display results
-				$('#results').fadeIn('250');
+				$('#results').fadeIn('250', function () {
+					if(formsubmitted){
+						// then scroll to the #results
+						var offset = $('#results').offset().top;
+						$('html, body').animate({scrollTop: offset}, 250);
+
+						formsubmitted = false;
+					}
+				});
 			}
 		});
 	}
@@ -103,12 +114,8 @@ $(function () {
 	// on form submit event
 	$('form').on("submit", function (e) {
 		e.preventDefault();
-
 		getResults();
-
-		// scroll to the #results
-		var offset = $('#results').offset().top;
-		$('html, body').animate({scrollTop: offset}, 500);
+		formsubmitted = true;
 	});
 
 	// on dropdown change event
