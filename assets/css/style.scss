@@ -63,7 +63,7 @@ form{
 			color: $main-color-inv;
 			background-color: $main-color;
 			border: none;
-			border-radius: none;
+			border-radius: 0;
 
 			&:focus{
 				background-color: lighten($main-color, 15%);

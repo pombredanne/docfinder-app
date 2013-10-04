@@ -595,7 +595,7 @@ form fieldset button {
   color: white;
   background-color: #48c2be;
   border: none;
-  border-radius: none;
+  border-radius: 0;
 }
 form fieldset input:focus,
 form fieldset select:focus,
