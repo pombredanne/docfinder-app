@@ -114,8 +114,8 @@ $(function () {
 	// on form submit event
 	$('form').on("submit", function (e) {
 		e.preventDefault();
-		getResults();
 		formsubmitted = true;
+		getResults();
 	});
 
 	// on dropdown change event
