@@ -3,9 +3,6 @@
 //  =====================
 
 $(function () {
-	// helper variable
-	var formsubmitted = false;
-
 	function getResults() {
 		// get the keyword
 		query = $('#query').val();
@@ -68,45 +65,12 @@ $(function () {
 
 				// and display results
 				$('#results').fadeIn('250', function () {
-					if(formsubmitted === true){
-						// then scroll to the #results
-						var offset = $("#info").offset().top;
-						$('html, body').animate({scrollTop: offset}, 250);
-
-						formsubmitted = false;
-					}
+					// then scroll to the #results
+					var offset = $("#info").offset().top;
+					$('html, body').animate({scrollTop: offset}, 250);
 				});
 			}
 		});
-	}
-
-	// get the specified url parameter's value
-	// credits: https://gist.github.com/1771618
-	function getUrlVar(key) {
-		var result = new RegExp(key + "=([^&]*)", "i").exec(window.location.search);
-		return result && result[1] || "";
-	}
-
-	// get q and lang url parameters into variables
-	var params = {};
-	params.page = 1;
-	params.q = getUrlVar('q');
-	params.lang = getUrlVar('lang');
-
-	// if the lang url parameter is not undefined, not null and not an empty string
-	if (typeof (params.lang) != "undefined" && params.lang !== null && params.lang !== '') {
-		// if the html of the selected option is not null
-		if ($('#lang option[name="' + params.lang + '"]').html() !== null) {
-			// then give that option the attribute of "selected"
-			$('#lang option[name="' + params.lang + '"]').attr('selected', true);
-		}
-	}
-
-	// if the q url parameter is not undefined, not null and not an empty string
-	if (typeof (params.q) != "undefined" && params.q !== null && params.q !== '') {
-		// insert the value of the q parameter inside the search input element
-		$('#query').val(params.q);
-		getResults();
 	}
 
 	// Events
@@ -114,23 +78,17 @@ $(function () {
 	// on form submit event
 	$('form').on("submit", function (e) {
 		e.preventDefault();
-		formsubmitted = true;
 		getResults();
 	});
 
-	// on dropdown change event
-	$('#lang').on("change", function (e) {
-		e.preventDefault();
-		getResults();
-	});
-
-	// on dropdown live(change) event
+	// on page change event
 	$('.page').on("change", function () {
 		params.page = $(this).find('option:selected').val();
 		getResults();
 		$(this).find('option[name=' + params.page + ']').attr("selected", true);
 	});
 
+	// on page change event
 	$(".page select").on("mouseup", function (e) {
 		e.preventDefault();
 		$(this).find('option[name=' + params.page + ']').attr("selected", true);
