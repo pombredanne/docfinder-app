@@ -3,136 +3,147 @@
 //  =====================
 
 $(function () {
-	// helper variable
-	var formsubmitted = false;
+	// wait for the phonegap plugins to load
+	document.addEventListener("deviceready", onDeviceReady, false);
 
-	function getResults() {
-		// get the keyword
-		query = $('#query').val();
-		// get the selected language
-		lang = $('#lang').find('option:selected').text();
+	// ready to run
+	function onDeviceReady () {
+		// helper variable
+		var formsubmitted = false;
 
-		// if its set to All
-		if (lang == 'All') {
-			// then just empty the string
-			lang = '';
+		function getResults() {
+			// get the keyword
+			query = $('#query').val();
+			// get the selected language
+			lang = $('#lang').find('option:selected').text();
+
+			// if its set to All
+			if (lang == 'All') {
+				// then just empty the string
+				lang = '';
+			}
+
+			// ajax call
+			$.ajax({
+				dataType: 'jsonp',
+				jsonp: 'callback',
+				url: 'http://searchco.de/api/jsonp_search_IV/?q=' + lang + ' ' + query + '&p=' + (params.page - 1) + '&callback=?',
+				success: function (data) {
+					// if the results are more than 10
+					if (data.total > 10) {
+						// then calculate pages
+						pages = parseInt(data.total / 10, 10);
+						if ((data.total % 10) > 0) {
+							pages++;
+						}
+					} else {
+						// else there is only 1 page
+						pages = 1;
+					}
+
+					// hide the results div
+					$('#results').hide();
+
+					// if data were returned
+					if(data.total !== null){
+						// print data returned
+						$("#info h3").html('Found "' + data.total + '" results.');
+					}else{
+						// else ask for data
+						$("#info h3").html('Please enter a keyword first');
+					}
+
+					// delete any already loaded results from previous queries
+					$('#results .result').remove();
+
+					// create the result HTML
+					for (var i = 0; i < data.results.length; i++) {
+						$("#results").append('<div class="result"><h3><a class="resultLink" href="#" data-url=' + data.results[i].url + '">' + data.results[i].name + '</a><span class="label">' + data.results[i].type + '</span></h3><hr /><p class="description">' + data.results[i].description + '</p><p class="synopsis">' + data.results[i].synopsis + '</p><div class="namespace">' + data.results[i].namespace + '</div></div>');
+						// $("#results").append('<div class="result"><h3><a class="resultLink" href="' + data.results[i].url + '">' + data.results[i].name + '</a><span class="label">' + data.results[i].type + '</span></h3><hr /><p class="description">' + data.results[i].description + '</p><p class="synopsis">' + data.results[i].synopsis + '</p><div class="namespace">' + data.results[i].namespace + '</div></div>');
+					}
+
+					// empty the #page dropdown options
+					$('#page').html('').removeAttr('disabled');
+					// fill the #page dropdown with page options
+					for (i = 0; i < pages; i++) {
+						$('#page').append('<option name=' + (i + 1) + ' value=' + (i + 1) + '>' + (i + 1) + '</option>');
+					}
+
+					// finally enable the #page dropdown
+					$('#page option[name=' + params.page + ']').attr("selected", true);
+
+					// and display results
+					$('#results').fadeIn('250', function () {
+						if(formsubmitted === true){
+							// then scroll to the #results
+							var offset = $(this).offset().top;
+							$('html, body').animate({scrollTop: offset}, 250);
+
+							formsubmitted = false;
+						}
+					});
+				}
+			});
 		}
 
-		// ajax call
-		$.ajax({
-			dataType: 'jsonp',
-			jsonp: 'callback',
-			url: 'http://searchco.de/api/jsonp_search_IV/?q=' + lang + ' ' + query + '&p=' + (params.page - 1) + '&callback=?',
-			success: function (data) {
-				// if the results are more than 10
-				if (data.total > 10) {
-					// then calculate pages
-					pages = parseInt(data.total / 10, 10);
-					if ((data.total % 10) > 0) {
-						pages++;
-					}
-				} else {
-					// else there is only 1 page
-					pages = 1;
-				}
+		// get the specified url parameter's value
+		// credits: https://gist.github.com/1771618
+		function getUrlVar(key) {
+			var result = new RegExp(key + "=([^&]*)", "i").exec(window.location.search);
+			return result && result[1] || "";
+		}
 
-				// hide the results div
-				$('#results').hide();
+		// get q and lang url parameters into variables
+		var params = {};
+		params.page = 1;
+		params.q = getUrlVar('q');
+		params.lang = getUrlVar('lang');
 
-				// if data were returned
-				if(data.total !== null){
-					// print data returned
-					$("#info h3").html('Found "' + data.total + '" results.');
-				}else{
-					// else ask for data
-					$("#info h3").html('Please enter a keyword first');
-				}
-
-				// delete any already loaded results from previous queries
-				$('#results .result').remove();
-
-				// create the result HTML
-				for (var i = 0; i < data.results.length; i++) {
-					$("#results").append('<div class="result"><h3><a class="resultLink" href="' + data.results[i].url + '">' + data.results[i].name + '</a><span class="label">' + data.results[i].type + '</span></h3><hr /><p class="description">' + data.results[i].description + '</p><p class="synopsis">' + data.results[i].synopsis + '</p><div class="namespace">' + data.results[i].namespace + '</div></div>');
-				}
-
-				// empty the #page dropdown options
-				$('#page').html('').removeAttr('disabled');
-				// fill the #page dropdown with page options
-				for (i = 0; i < pages; i++) {
-					$('#page').append('<option name=' + (i + 1) + ' value=' + (i + 1) + '>' + (i + 1) + '</option>');
-				}
-
-				// finally enable the #page dropdown
-				$('#page option[name=' + params.page + ']').attr("selected", true);
-
-				// and display results
-				$('#results').fadeIn('250', function () {
-					if(formsubmitted === true){
-						// then scroll to the #results
-						var offset = $(this).offset().top;
-						$('html, body').animate({scrollTop: offset}, 250);
-
-						formsubmitted = false;
-					}
-				});
+		// if the lang url parameter is not undefined, not null and not an empty string
+		if (typeof (params.lang) != "undefined" && params.lang !== null && params.lang !== '') {
+			// if the html of the selected option is not null
+			if ($('#lang option[name="' + params.lang + '"]').html() !== null) {
+				// then give that option the attribute of "selected"
+				$('#lang option[name="' + params.lang + '"]').attr('selected', true);
 			}
+		}
+
+		// if the q url parameter is not undefined, not null and not an empty string
+		if (typeof (params.q) != "undefined" && params.q !== null && params.q !== '') {
+			// insert the value of the q parameter inside the search input element
+			$('#query').val(params.q);
+			getResults();
+		}
+
+		// Events
+
+		// on form submit event
+		$('form').on("submit", function (e) {
+			e.preventDefault();
+			formsubmitted = true;
+			getResults();
+		});
+
+		// on dropdown change event
+		$('#lang').on("change", function (e) {
+			e.preventDefault();
+			getResults();
+		});
+
+		// on dropdown live(change) event
+		$('#page').on("change", function () {
+			params.page = $('#page option:selected').val();
+			getResults();
+			$('#page option[name=' + params.page + ']').attr("selected", true);
+		});
+
+		$("#page select").on("mouseup", function (e) {
+			e.preventDefault();
+			$('#page option[name=' + params.page + ']').attr("selected", true);
+		});
+
+		$(".resultLink").on("click", function (e) {
+			var ref = window.open($(this).data("url"), "_blank", "location=yes");
 		});
 	}
-
-	// get the specified url parameter's value
-	// credits: https://gist.github.com/1771618
-	function getUrlVar(key) {
-		var result = new RegExp(key + "=([^&]*)", "i").exec(window.location.search);
-		return result && result[1] || "";
-	}
-
-	// get q and lang url parameters into variables
-	var params = {};
-	params.page = 1;
-	params.q = getUrlVar('q');
-	params.lang = getUrlVar('lang');
-
-	// if the lang url parameter is not undefined, not null and not an empty string
-	if (typeof (params.lang) != "undefined" && params.lang !== null && params.lang !== '') {
-		// if the html of the selected option is not null
-		if ($('#lang option[name="' + params.lang + '"]').html() !== null) {
-			// then give that option the attribute of "selected"
-			$('#lang option[name="' + params.lang + '"]').attr('selected', true);
-		}
-	}
-
-	// if the q url parameter is not undefined, not null and not an empty string
-	if (typeof (params.q) != "undefined" && params.q !== null && params.q !== '') {
-		// insert the value of the q parameter inside the search input element
-		$('#query').val(params.q);
-		getResults();
-	}
-
-	// Events
-
-	// on form submit event
-	$('form').on("submit", function (e) {
-		e.preventDefault();
-		formsubmitted = true;
-		getResults();
-	});
-
-	// on dropdown change event
-	$('#lang').on("change", function (e) {
-		e.preventDefault();
-		getResults();
-	});
-
-	// on dropdown live(change) event
-	$('#page').on("change", function () {
-		params.page = $('#page option:selected').val();
-		getResults();
-		$('#page option[name=' + params.page + ']').attr("selected", true);
-	});
-
-	$("#page select").on("mouseup", function (e) {
-		e.preventDefault();
-		$('#page option[name=' + params.page + ']').attr("selected", true);
-	});
 });
