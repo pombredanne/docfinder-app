@@ -8,14 +8,13 @@
 >
 
 	<name>docFinder (Alpha)</name>
-
 	<description>A documentation searching service by AKLP.gr Projects and Adonis K.</description>
-
 	<author href="http://varemenos.com" email="aklp08@gmail.com">Adonis K.</author>
-	<preference name="permissions" value="none"/>
+
 
 	<gap:platform name="android" />
 
+	<preference name="permissions" value="none"/>
 	<preference name="phonegap-version" value="3.0.0" />
 	<preference name="orientation" value="default" />
 	<preference name="target-device"  value="universal" />
@@ -23,6 +22,8 @@
 	<preference name="android-minSdkVersion" value="9" />
 	<preference name="android-targetSdkVersion" value="14" />
 	<preference name="android-installLocation" value="auto" />
+
+	<gap:plugin name="org.apache.cordova.core.inappbrowser" />
 
 	<icon src="icon.png" />
 
