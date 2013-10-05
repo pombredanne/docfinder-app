@@ -56,21 +56,21 @@ $(function () {
 					$("#results").append('<div class="result"><h3><a class="resultLink" href="' + data.results[i].url + '">' + data.results[i].name + '</a><span class="label">' + data.results[i].type + '</span></h3><hr /><p class="description">' + data.results[i].description + '</p><p class="synopsis">' + data.results[i].synopsis + '</p><div class="namespace">' + data.results[i].namespace + '</div></div>');
 				}
 
-				// empty the #page dropdown options
-				$('#page').html('').removeAttr('disabled');
-				// fill the #page dropdown with page options
+				// empty the .page dropdown options
+				$('.page').html('').removeAttr('disabled');
+				// fill the .page dropdown with page options
 				for (i = 0; i < pages; i++) {
-					$('#page').append('<option name=' + (i + 1) + ' value=' + (i + 1) + '>' + (i + 1) + '</option>');
+					$('.page').append('<option name=' + (i + 1) + ' value=' + (i + 1) + '>' + (i + 1) + '</option>');
 				}
 
-				// finally enable the #page dropdown
-				$('#page option[name=' + params.page + ']').attr("selected", true);
+				// finally enable the .page dropdown
+				$('.page option[name=' + params.page + ']').attr("selected", true);
 
 				// and display results
 				$('#results').fadeIn('250', function () {
 					if(formsubmitted === true){
 						// then scroll to the #results
-						var offset = $(this).offset().top;
+						var offset = $("#info").offset().top;
 						$('html, body').animate({scrollTop: offset}, 250);
 
 						formsubmitted = false;
@@ -125,14 +125,14 @@ $(function () {
 	});
 
 	// on dropdown live(change) event
-	$('#page').on("change", function () {
-		params.page = $('#page option:selected').val();
+	$('.page').on("change", function () {
+		params.page = $(this).find('option:selected').val();
 		getResults();
-		$('#page option[name=' + params.page + ']').attr("selected", true);
+		$(this).find('option[name=' + params.page + ']').attr("selected", true);
 	});
 
-	$("#page select").on("mouseup", function (e) {
+	$(".page select").on("mouseup", function (e) {
 		e.preventDefault();
-		$('#page option[name=' + params.page + ']').attr("selected", true);
+		$(this).find('option[name=' + params.page + ']').attr("selected", true);
 	});
 });

@@ -4,10 +4,10 @@
 	xmlns = "http://www.w3.org/ns/widgets"
 	xmlns:gap = "http://phonegap.com/ns/1.0"
 	id = "com.varemenos.docfinder"
-	version = "0.1.5"
+	version = "0.1.6"
 >
 
-	<name>docFinder (Alpha)</name>
+	<name>docFinder</name>
 	<description>A documentation searching service by AKLP.gr Projects and Adonis K.</description>
 	<author href="http://varemenos.com" email="aklp08@gmail.com">Adonis K.</author>
 

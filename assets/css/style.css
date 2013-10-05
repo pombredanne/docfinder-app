@@ -602,6 +602,11 @@ form fieldset select:focus,
 form fieldset button:focus {
   outline: 5px solid #81d5d2;
 }
+form fieldset input:disabled,
+form fieldset select:disabled,
+form fieldset button:disabled {
+  color: #d9d9d9;
+}
 form fieldset #query {
   margin-bottom: 1rem;
 }
@@ -609,17 +614,19 @@ form fieldset button {
   color: white;
 }
 form fieldset ::-webkit-input-placeholder {
-  color: #ececec;
+  color: white;
 }
-form fieldset ::-ms-input-placeholder {
-  color: #ececec;
+
+#info {
+  box-sizing: border-box;
+  padding: 1rem 1rem 0 1rem;
+}
+#info h3 {
+  margin: 0;
 }
 
 #results {
-  padding: 1rem 1rem 0 1rem;
-}
-#results #info h3 {
-  margin: 0;
+  padding: 0 1rem;
 }
 #results h3 {
   margin: 1rem 0 0 0;
