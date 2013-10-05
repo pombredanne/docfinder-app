@@ -73,6 +73,12 @@ $(function () {
 		});
 	}
 
+	var params = {
+		q: "",
+		lang: "",
+		page: 1
+	};
+
 	// Events
 
 	// on form submit event
