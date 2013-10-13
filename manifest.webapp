@@ -1,0 +1,21 @@
+{
+	"version": "0.1.7",
+	"name": "docFinder",
+	"description": "A documentation searching service by AKLP.gr Projects and Adonis K.",
+	"launch_path": "/index.html",
+	"icons": {
+		"16": "/img/images/drawable-mdpi/icon.png",
+		"48": "/img/images/drawable-mdpi/icon.png",
+		"128": "/img/images/drawable-xxdpi/icon.png"
+	},
+	"developer": {
+		"name": "Adonis K.",
+		"url": "http://varemenos.com"
+	},
+	"installs_allowed_from": ["*"],
+	"locales": {},
+	"default_locale": "en",
+	"permissions": {
+		"systemXHR": {}
+	}
+}
