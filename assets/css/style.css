@@ -498,6 +498,7 @@ veGrid - Grid System by Adonis K.
 }
 
 .grid {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: block;
   margin: 0;
@@ -516,6 +517,7 @@ veGrid - Grid System by Adonis K.
 }
 
 .row {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: block;
   padding-bottom: 1rem;
@@ -534,6 +536,7 @@ veGrid - Grid System by Adonis K.
   padding-bottom: 0;
 }
 .row > * {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: block;
   float: left;
@@ -586,8 +589,10 @@ form fieldset input,
 form fieldset select,
 form fieldset button {
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   box-sizing: border-box !important;
+  -moz-box-sizing: border-box !important;
   display: block;
   width: 100%;
   margin: 0;
@@ -618,6 +623,7 @@ form fieldset ::-webkit-input-placeholder {
 }
 
 #info {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 1rem 1rem 0 1rem;
 }
@@ -632,6 +638,7 @@ form fieldset ::-webkit-input-placeholder {
   margin: 1rem 0 0 0;
 }
 #results .result {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
   word-break: break-all;

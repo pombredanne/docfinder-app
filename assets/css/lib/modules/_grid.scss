@@ -32,6 +32,7 @@ veGrid - Grid System by Adonis K.
 	}
 
 	.grid{
+		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 		@include clearfix;
 		display: block;
@@ -41,6 +42,7 @@ veGrid - Grid System by Adonis K.
 	}
 
 	.row{
+		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 		@include clearfix;
 		display: block;
@@ -54,6 +56,7 @@ veGrid - Grid System by Adonis K.
 		}
 
 		& > *{
+			-moz-box-sizing: border-box;
 			box-sizing: border-box;
 			display: block;
 			float: left;
