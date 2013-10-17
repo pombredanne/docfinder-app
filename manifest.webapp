@@ -4,9 +4,10 @@
 	"description": "A documentation searching service by AKLP.gr Projects and Adonis K.",
 	"launch_path": "/index.html",
 	"icons": {
-		"16": "/img/images/drawable-mdpi/icon.png",
-		"48": "/img/images/drawable-mdpi/icon.png",
-		"128": "/img/images/drawable-xxdpi/icon.png"
+		"60": "/assets/img/images/firefox-60/icon.png",
+		"90": "/assets/img/images/firefox-90/icon.png",
+		"120": "/assets/img/images/firefox-120/icon.png",
+		"128": "/assets/img/images/firefox-128/icon.png"
 	},
 	"developer": {
 		"name": "Adonis K.",
